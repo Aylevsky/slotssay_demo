@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./bundles/main.min.css"/>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png"/>
+    <title>Contact Us</title>
+  </head>
+  <body id="app">
+        <header class="header" id="header">
+          <div class="container">
+            <div class="wrapper header__wrapper"> 
+              <div class="header__burger" @click="mobileNav = true"> 
+                <div class="header__line" style="width:12.5px;margin-right:7.5px;"> </div>
+                <div class="header__line"></div>
+                <div class="header__line" style="width:7.5px;margin-right:12.5px;"> </div>
+              </div><a class="header__logo" href="index.html"> <picture><source srcset="./images/logo.webp" type="image/webp"><img src="./images/logo.png" alt="Logo" loading="lazy"></picture></a>
+              <div class="header__navigation"> <a class="header__link" href="index.html">
+                  <div class="header__text">Home</div></a><a class="header__link" href="about.html">
+                  <div class="header__text">About Us</div></a><a class="header__link" href="privacy.html">
+                  <div class="header__text">Privacy & Cookies Policy</div></a><a class="header__link" href="contact.html">
+                  <div class="header__text">Contact Us</div></a></div>
+              <div class="header__fake"></div>
+              <div class="button button_1" v-if="!login" @click="showModal = true">Sign Up</div>
+              <div class="button button_2" v-if="login" @click="signOut">Sign Out</div>
+            </div>
+          </div>
+        </header>
+        <transition name="mobNav">
+          <div class="mob-nav" ref="mobNav" v-show="mobileNav" @click="mobileNav = false">
+            <div class="mob-nav__content" @click.stop>
+              <div class="mob-nav__close" @click="mobileNav = false"><svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.158834 1.72019C0.108477 1.66983 0.0685325 1.61005 0.0412797 1.54425C0.0140269 1.47846 5.30593e-10 1.40794 0 1.33673C-5.30594e-10 1.26551 0.0140269 1.19499 0.0412797 1.1292C0.0685325 1.06341 0.108477 1.00362 0.158834 0.953268C0.209191 0.902911 0.268973 0.862966 0.334767 0.835713C0.400561 0.80846 0.471079 0.794434 0.542294 0.794434C0.613509 0.794434 0.684027 0.80846 0.749821 0.835713C0.815615 0.862966 0.875397 0.902911 0.925754 0.953268L6.5 6.5286L12.0742 0.953268C12.1246 0.902911 12.1844 0.862966 12.2502 0.835713C12.316 0.80846 12.3865 0.794434 12.4577 0.794434C12.5289 0.794434 12.5994 0.80846 12.6652 0.835713C12.731 0.862966 12.7908 0.902911 12.8412 0.953268C12.8915 1.00362 12.9315 1.06341 12.9587 1.1292C12.986 1.19499 13 1.26551 13 1.33673C13 1.40794 12.986 1.47846 12.9587 1.54425C12.9315 1.61005 12.8915 1.66983 12.8412 1.72019L7.26584 7.29443L12.8412 12.8687C12.8915 12.919 12.9315 12.9788 12.9587 13.0446C12.986 13.1104 13 13.1809 13 13.2521C13 13.3234 12.986 13.3939 12.9587 13.4597C12.9315 13.5255 12.8915 13.5852 12.8412 13.6356C12.7908 13.686 12.731 13.7259 12.6652 13.7532C12.5994 13.7804 12.5289 13.7944 12.4577 13.7944C12.3865 13.7944 12.316 13.7804 12.2502 13.7532C12.1844 13.7259 12.1246 13.686 12.0742 13.6356L6.5 8.06027L0.925754 13.6356C0.875397 13.686 0.815615 13.7259 0.749821 13.7532C0.684027 13.7804 0.613509 13.7944 0.542294 13.7944C0.471079 13.7944 0.400561 13.7804 0.334767 13.7532C0.268973 13.7259 0.209191 13.686 0.158834 13.6356C0.108477 13.5852 0.0685325 13.5255 0.0412797 13.4597C0.0140269 13.3939 0 13.3234 0 13.2521C0 13.1809 0.0140269 13.1104 0.0412797 13.0446C0.0685325 12.9788 0.108477 12.919 0.158834 12.8687L5.73416 7.29443L0.158834 1.72019Z" fill="#CCCCCC"/>
+</svg>
+              </div>
+              <div class="mob-nav__logo"> <picture><source srcset="./images/logo.webp" type="image/webp"><img src="./images/logo.png" alt=""></picture></div>
+              <div class="mob-nav__nav"> <a class="mob-nav__link" href="index.html"> 
+                  <div class="mob-nav__bg"></div>
+                  <div class="mob-nav__text">Home</div></a><a class="mob-nav__link" href="about.html"> 
+                  <div class="mob-nav__bg"></div>
+                  <div class="mob-nav__text">About Us</div></a><a class="mob-nav__link" href="privacy.html"> 
+                  <div class="mob-nav__bg"></div>
+                  <div class="mob-nav__text">Privacy & Cookies Policy</div></a><a class="mob-nav__link" href="contact.html"> 
+                  <div class="mob-nav__bg"></div>
+                  <div class="mob-nav__text">Contact Us</div></a></div>
+              <div class="button button_1" v-if="!login" @click="showModal = true">Sign Up</div>
+              <div class="button button_2" v-if="login" @click="signOut">Sign Out</div>
+            </div>
+          </div>
+        </transition>
+        <login-modal :modal="showModal" @close="showModal = false"></login-modal>
+    <main>
+      <div class="headline-wrap">
+        <div class="container">
+          <h1 class="h1">Contact Us</h1>
+        </div>
+      </div>
+      <div class="container"> 
+        <contact-form @secsess-modal="secsessModal = true"></contact-form>
+      </div>
+      <transition name="main">
+        <div class="contact-modal" v-show="secsessModal" @click="secsessModal = false">
+          <div class="contact-modal__content" @click.stop> 
+            <div class="contact-modal__close" @click="secsessModal = false"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.146631 0.855364C0.100144 0.808876 0.0632674 0.753687 0.0381083 0.692947C0.0129493 0.632208 4.8983e-10 0.567108 0 0.501364C-4.8983e-10 0.43562 0.0129493 0.37052 0.0381083 0.309781C0.0632674 0.249041 0.100144 0.193852 0.146631 0.147364C0.193119 0.100876 0.248309 0.0639999 0.309048 0.0388408C0.369788 0.0136817 0.434888 0.000732421 0.500632 0.000732422C0.566375 0.000732422 0.631476 0.0136817 0.692215 0.0388408C0.752954 0.0639999 0.808144 0.100876 0.854632 0.147364L6.00063 5.29436L11.1466 0.147364C11.1931 0.100876 11.2483 0.0639999 11.309 0.0388408C11.3698 0.0136817 11.4349 0.000732422 11.5006 0.000732422C11.5664 0.000732422 11.6315 0.0136817 11.6922 0.0388408C11.753 0.0639999 11.8081 0.100876 11.8546 0.147364C11.9011 0.193852 11.938 0.249041 11.9632 0.309781C11.9883 0.37052 12.0013 0.43562 12.0013 0.501364C12.0013 0.567108 11.9883 0.632208 11.9632 0.692947C11.938 0.753687 11.9011 0.808876 11.8546 0.855364L6.70763 6.00136L11.8546 11.1474C11.9011 11.1939 11.938 11.249 11.9632 11.3098C11.9883 11.3705 12.0013 11.4356 12.0013 11.5014C12.0013 11.5671 11.9883 11.6322 11.9632 11.6929C11.938 11.7537 11.9011 11.8089 11.8546 11.8554C11.8081 11.9019 11.753 11.9387 11.6922 11.9639C11.6315 11.989 11.5664 12.002 11.5006 12.002C11.4349 12.002 11.3698 11.989 11.309 11.9639C11.2483 11.9387 11.1931 11.9019 11.1466 11.8554L6.00063 6.70836L0.854632 11.8554C0.808144 11.9019 0.752954 11.9387 0.692215 11.9639C0.631476 11.989 0.566375 12.002 0.500632 12.002C0.434888 12.002 0.369788 11.989 0.309048 11.9639C0.248309 11.9387 0.193119 11.9019 0.146631 11.8554C0.100144 11.8089 0.0632674 11.7537 0.0381083 11.6929C0.0129493 11.6322 0 11.5671 0 11.5014C0 11.4356 0.0129493 11.3705 0.0381083 11.3098C0.0632674 11.249 0.100144 11.1939 0.146631 11.1474L5.29363 6.00136L0.146631 0.855364Z" fill="#CCCCCC"/>
+</svg>
+            </div><svg width="100" height="64" viewBox="0 0 100 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M97.5732 13.9332C94.3381 10.6978 89.0926 10.6978 85.8572 13.9332L55.3664 44.424L50.3674 39.425L38.6514 51.141L47.3311 59.8207C51.7688 64.2584 58.9637 64.2584 63.4016 59.8207L97.5732 25.649C100.809 22.4139 100.809 17.1684 97.5732 13.9332V13.9332Z" fill="url(#paint0_linear_0_1)"/>
+<path d="M24.306 33.7682L54.797 3.27734C58.0324 0.0419921 63.2777 0.0419921 66.513 3.27734C69.7484 6.5127 69.7484 11.758 66.513 14.9934L32.3414 49.165C27.9037 53.6027 20.7087 53.6027 16.2709 49.165L2.42651 35.3207C-0.808838 32.0854 -0.808838 26.84 2.42651 23.6047C5.66187 20.3695 10.9072 20.3695 14.1425 23.6047L24.306 33.7682Z" fill="url(#paint1_linear_0_1)"/>
+<defs>
+<linearGradient id="paint0_linear_0_1" x1="69.3256" y1="11.5067" x2="69.3256" y2="63.149" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF014C"/>
+<stop offset="1" stop-color="#A80132"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_1" x1="34.4698" y1="0.85083" x2="34.4698" y2="52.4933" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF014C"/>
+<stop offset="1" stop-color="#A80132"/>
+</linearGradient>
+</defs>
+</svg>
+            <h2 class="h2">Thank you for your message</h2>
+            <p class="paragraph">We will contact you shortly</p><a class="button button_5" href="index.html"> 
+              <div class="button__text">
+                Continue<svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.16685 7.4147L2.49166 0.739632C2.33727 0.585121 2.13118 0.5 1.91142 0.5C1.69167 0.5 1.48557 0.585121 1.33118 0.739632L0.839602 1.23109C0.519726 1.55133 0.519726 2.07182 0.839602 2.39157L6.44492 7.99689L0.833382 13.6084C0.678993 13.7629 0.59375 13.9689 0.59375 14.1885C0.59375 14.4084 0.678993 14.6144 0.833382 14.769L1.32496 15.2604C1.47947 15.4149 1.68545 15.5 1.9052 15.5C2.12496 15.5 2.33105 15.4149 2.48544 15.2604L9.16685 8.5792C9.32161 8.4242 9.40661 8.21725 9.40612 7.99726C9.40661 7.7764 9.32161 7.56958 9.16685 7.4147Z" fill="white"/>
+</svg>
+              </div></a>
+          </div>
+        </div>
+      </transition>
+    </main>
+        <footer class="footer">
+          <div class="container">
+            <div class="wrapper footer__wrapper"> <a class="footer__logo" href="index.html"><picture><source srcset="./images/logo.webp" type="image/webp"><img src="./images/logo.png" alt=""></picture></a>
+              <p class="paragraph footer__text">This is a social gaming website Designed for an adult audience (18+) and does not offer real money gambling or the opportunity to win real money or prizes. Practice or success at social gambling does not guarantee future success at "real money" gambling in future.</p>
+              <p class="paragraph footer__copyright">© Copyright 2022 slotssay.com</p>
+            </div>
+          </div>
+        </footer>
+    <script src="./vendor/vue/vue.min.js"></script>
+    <script src="./bundles/app.min.js"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+  </body>
+</html>

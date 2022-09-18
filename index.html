@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./bundles/main.min.css"/>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png"/>
+    <title>Home</title>
+  </head>
+  <body class="index" id="app">
+        <header class="header" id="header">
+          <div class="container">
+            <div class="wrapper header__wrapper"> 
+              <div class="header__burger" @click="mobileNav = true"> 
+                <div class="header__line" style="width:12.5px;margin-right:7.5px;"> </div>
+                <div class="header__line"></div>
+                <div class="header__line" style="width:7.5px;margin-right:12.5px;"> </div>
+              </div><a class="header__logo" href="index.html"> <picture><source srcset="./images/logo.webp" type="image/webp"><img src="./images/logo.png" alt="Logo" loading="lazy"></picture></a>
+              <div class="header__navigation"> <a class="header__link" href="index.html">
+                  <div class="header__text">Home</div></a><a class="header__link" href="about.html">
+                  <div class="header__text">About Us</div></a><a class="header__link" href="privacy.html">
+                  <div class="header__text">Privacy & Cookies Policy</div></a><a class="header__link" href="contact.html">
+                  <div class="header__text">Contact Us</div></a></div>
+              <div class="header__fake"></div>
+              <div class="button button_1" v-if="!login" @click="showModal = true">Sign Up</div>
+              <div class="button button_2" v-if="login" @click="signOut">Sign Out</div>
+            </div>
+          </div>
+        </header>
+        <transition name="mobNav">
+          <div class="mob-nav" ref="mobNav" v-show="mobileNav" @click="mobileNav = false">
+            <div class="mob-nav__content" @click.stop>
+              <div class="mob-nav__close" @click="mobileNav = false"><svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.158834 1.72019C0.108477 1.66983 0.0685325 1.61005 0.0412797 1.54425C0.0140269 1.47846 5.30593e-10 1.40794 0 1.33673C-5.30594e-10 1.26551 0.0140269 1.19499 0.0412797 1.1292C0.0685325 1.06341 0.108477 1.00362 0.158834 0.953268C0.209191 0.902911 0.268973 0.862966 0.334767 0.835713C0.400561 0.80846 0.471079 0.794434 0.542294 0.794434C0.613509 0.794434 0.684027 0.80846 0.749821 0.835713C0.815615 0.862966 0.875397 0.902911 0.925754 0.953268L6.5 6.5286L12.0742 0.953268C12.1246 0.902911 12.1844 0.862966 12.2502 0.835713C12.316 0.80846 12.3865 0.794434 12.4577 0.794434C12.5289 0.794434 12.5994 0.80846 12.6652 0.835713C12.731 0.862966 12.7908 0.902911 12.8412 0.953268C12.8915 1.00362 12.9315 1.06341 12.9587 1.1292C12.986 1.19499 13 1.26551 13 1.33673C13 1.40794 12.986 1.47846 12.9587 1.54425C12.9315 1.61005 12.8915 1.66983 12.8412 1.72019L7.26584 7.29443L12.8412 12.8687C12.8915 12.919 12.9315 12.9788 12.9587 13.0446C12.986 13.1104 13 13.1809 13 13.2521C13 13.3234 12.986 13.3939 12.9587 13.4597C12.9315 13.5255 12.8915 13.5852 12.8412 13.6356C12.7908 13.686 12.731 13.7259 12.6652 13.7532C12.5994 13.7804 12.5289 13.7944 12.4577 13.7944C12.3865 13.7944 12.316 13.7804 12.2502 13.7532C12.1844 13.7259 12.1246 13.686 12.0742 13.6356L6.5 8.06027L0.925754 13.6356C0.875397 13.686 0.815615 13.7259 0.749821 13.7532C0.684027 13.7804 0.613509 13.7944 0.542294 13.7944C0.471079 13.7944 0.400561 13.7804 0.334767 13.7532C0.268973 13.7259 0.209191 13.686 0.158834 13.6356C0.108477 13.5852 0.0685325 13.5255 0.0412797 13.4597C0.0140269 13.3939 0 13.3234 0 13.2521C0 13.1809 0.0140269 13.1104 0.0412797 13.0446C0.0685325 12.9788 0.108477 12.919 0.158834 12.8687L5.73416 7.29443L0.158834 1.72019Z" fill="#CCCCCC"/>
+</svg>
+              </div>
+              <div class="mob-nav__logo"> <picture><source srcset="./images/logo.webp" type="image/webp"><img src="./images/logo.png" alt=""></picture></div>
+              <div class="mob-nav__nav"> <a class="mob-nav__link" href="index.html"> 
+                  <div class="mob-nav__bg"></div>
+                  <div class="mob-nav__text">Home</div></a><a class="mob-nav__link" href="about.html"> 
+                  <div class="mob-nav__bg"></div>
+                  <div class="mob-nav__text">About Us</div></a><a class="mob-nav__link" href="privacy.html"> 
+                  <div class="mob-nav__bg"></div>
+                  <div class="mob-nav__text">Privacy & Cookies Policy</div></a><a class="mob-nav__link" href="contact.html"> 
+                  <div class="mob-nav__bg"></div>
+                  <div class="mob-nav__text">Contact Us</div></a></div>
+              <div class="button button_1" v-if="!login" @click="showModal = true">Sign Up</div>
+              <div class="button button_2" v-if="login" @click="signOut">Sign Out</div>
+            </div>
+          </div>
+        </transition>
+        <login-modal :modal="showModal" @close="showModal = false"></login-modal>
+    <main>
+      <div class="banner"> 
+        <div class="container"> 
+          <div class="banner__content"> 
+            <h1 class="h1">Top Popular Free Slots 2022 - Social Slots in Australia</h1>
+            <p>The best free online slots you can play in Australia. The free online casino slots listed on this page are also available for mobile devices, so you can play slot games on your phone or tablet.</p><a class="button button_3" href="#game">Play Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="advantages"> 
+        <div class="container"> 
+          <div class="advantages__content"> 
+            <div class="advantages__item"> <picture><source srcset="./images/blocks/advantages/1.webp" type="image/webp"><img src="./images/blocks/advantages/1.png" alt=""></picture>
+              <h5>Play Any <br>Device</h5>
+            </div>
+            <div class="advantages__line"></div>
+            <div class="advantages__item"> <picture><source srcset="./images/blocks/advantages/2.webp" type="image/webp"><img src="./images/blocks/advantages/2.png" alt=""></picture>
+              <h5>Popular Social Casino <br>in AU</h5>
+            </div>
+            <div class="advantages__line"></div>
+            <div class="advantages__item"> <picture><source srcset="./images/blocks/advantages/3.webp" type="image/webp"><img src="./images/blocks/advantages/3.png" alt=""></picture>
+              <h5>No Download <br>Required</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="games">
+        <div class="games__headline"> 
+          <div class="container"> 
+            <h2 class="h2">Best Free Slots in Australia</h2>
+          </div>
+        </div>
+        <div class="container"> 
+          <div class="games__wrapper"> <a class="games__game" href="g.html?link=https://reyob4lrzaxmh30.c27games.com/" id="game">
+              <div class="games__img"> <picture><source srcset="./images/blocks/games/slot-0.webp" type="image/webp"><img src="./images/blocks/games/slot-0.png" alt=""></picture>
+                <div class="games__hover"> 
+                  <div class="button button_1">
+                    Play Now<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.55267 0.264591C1.4708 -0.355984 0.593689 0.152398 0.593689 1.39919V10.5999C0.593689 11.848 1.4708 12.3557 2.55267 11.7357L10.5946 7.12372C11.6768 6.50293 11.6768 5.49715 10.5946 4.8765L2.55267 0.264591Z" fill="white"/>
+</svg>
+                  </div>
+                </div>
+              </div>
+              <h5>15 Dragon Pearls</h5></a><a class="games__game games__game_big" href="g.html?link=https://bgaming-network.com/games/ElvisFrog/FUN?play_token=9547f6f2-73e9-4389-8915-ca190f38c8af" id="game">
+              <div class="games__img"> <picture><source srcset="./images/blocks/games/slot-1.webp" type="image/webp"><img src="./images/blocks/games/slot-1.png" alt=""></picture>
+                <div class="games__hover"> 
+                  <div class="button button_1">
+                    Play Now<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.55267 0.264591C1.4708 -0.355984 0.593689 0.152398 0.593689 1.39919V10.5999C0.593689 11.848 1.4708 12.3557 2.55267 11.7357L10.5946 7.12372C11.6768 6.50293 11.6768 5.49715 10.5946 4.8765L2.55267 0.264591Z" fill="white"/>
+</svg>
+                  </div>
+                </div>
+              </div>
+              <h5>Elvis Frog in Vegas</h5></a><a class="games__game" href="g.html?link=https://lnh9bdsg3k5y3jc.c27games.com/" id="game">
+              <div class="games__img"> <picture><source srcset="./images/blocks/games/slot-2.webp" type="image/webp"><img src="./images/blocks/games/slot-2.png" alt=""></picture>
+                <div class="games__hover"> 
+                  <div class="button button_1">
+                    Play Now<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.55267 0.264591C1.4708 -0.355984 0.593689 0.152398 0.593689 1.39919V10.5999C0.593689 11.848 1.4708 12.3557 2.55267 11.7357L10.5946 7.12372C11.6768 6.50293 11.6768 5.49715 10.5946 4.8765L2.55267 0.264591Z" fill="white"/>
+</svg>
+                  </div>
+                </div>
+              </div>
+              <h5>Sun of Egypt 3</h5></a><a class="games__game" href="g.html?link=https://bgaming-network.com/play/AlohaKingElvis/FUN?server=demo" id="game">
+              <div class="games__img"> <picture><source srcset="./images/blocks/games/slot-3.webp" type="image/webp"><img src="./images/blocks/games/slot-3.png" alt=""></picture>
+                <div class="games__hover"> 
+                  <div class="button button_1">
+                    Play Now<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.55267 0.264591C1.4708 -0.355984 0.593689 0.152398 0.593689 1.39919V10.5999C0.593689 11.848 1.4708 12.3557 2.55267 11.7357L10.5946 7.12372C11.6768 6.50293 11.6768 5.49715 10.5946 4.8765L2.55267 0.264591Z" fill="white"/>
+</svg>
+                  </div>
+                </div>
+              </div>
+              <h5>Aloha King Elvis</h5></a><a class="games__game" href="g.html?link=https://www.joocasino.com/games/softswiss/AztecMagicBonanza/188773?game_open_source%5Btype%5D=direct&amp;game_open_source%5Bdomain%5D=www.joocasino.com" id="game">
+              <div class="games__img"> <picture><source srcset="./images/blocks/games/slot-4.webp" type="image/webp"><img src="./images/blocks/games/slot-4.png" alt=""></picture>
+                <div class="games__hover"> 
+                  <div class="button button_1">
+                    Play Now<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.55267 0.264591C1.4708 -0.355984 0.593689 0.152398 0.593689 1.39919V10.5999C0.593689 11.848 1.4708 12.3557 2.55267 11.7357L10.5946 7.12372C11.6768 6.50293 11.6768 5.49715 10.5946 4.8765L2.55267 0.264591Z" fill="white"/>
+</svg>
+                  </div>
+                </div>
+              </div>
+              <h5>Aztec Magic Bonanza</h5></a>
+          </div>
+        </div>
+      </div>
+    </main>
+        <footer class="footer">
+          <div class="container">
+            <div class="wrapper footer__wrapper"> <a class="footer__logo" href="index.html"><picture><source srcset="./images/logo.webp" type="image/webp"><img src="./images/logo.png" alt=""></picture></a>
+              <p class="paragraph footer__text">This is a social gaming website Designed for an adult audience (18+) and does not offer real money gambling or the opportunity to win real money or prizes. Practice or success at social gambling does not guarantee future success at "real money" gambling in future.</p>
+              <p class="paragraph footer__copyright">© Copyright 2022 slotssay.com</p>
+            </div>
+          </div>
+        </footer>
+    <script src="./vendor/vue/vue.min.js"></script>
+    <script src="./bundles/app.min.js"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+  </body>
+</html>
