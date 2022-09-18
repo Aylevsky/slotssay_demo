@@ -496,6 +496,10 @@ input {
   opacity: 0.8;
 }
 
+.header .button {
+  opacity: 0;
+}
+
 .no-webp .headline-wrap {
   background-image: url("../images/blocks/headline-wrap/bg.png"); }
 
@@ -648,7 +652,7 @@ input {
   z-index: 10;
 }
 
-.contact-modal__close {
+opa .contact-modal__close {
   position: absolute;
   top: 39px;
   right: 39px;
@@ -985,6 +989,7 @@ input {
       -ms-flex-align: center;
           align-items: center;
   z-index: 10;
+  opacity: 0;
 }
 
 .modal .h2 {
