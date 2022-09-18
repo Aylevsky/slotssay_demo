@@ -650,9 +650,10 @@ input {
       -ms-flex-align: center;
           align-items: center;
   z-index: 10;
+  opacity: 0;
 }
 
-opa .contact-modal__close {
+.contact-modal__close {
   position: absolute;
   top: 39px;
   right: 39px;
