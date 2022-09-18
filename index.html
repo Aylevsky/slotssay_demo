@@ -23,8 +23,8 @@
                   <div class="header__text">Privacy & Cookies Policy</div></a><a class="header__link" href="contact.html">
                   <div class="header__text">Contact Us</div></a></div>
               <div class="header__fake"></div>
-              <div class="button button_1" v-if="!login" @click="showModal = true" ref="btn1">Sign Up</div>
-              <div class="button button_2" v-if="login" @click="signOut" ref="btn2">Sign Out</div>
+              <div class="button button_1" v-show="!login" @click="showModal = true" ref="btn1">Sign Up</div>
+              <div class="button button_2" v-show="login" @click="signOut" ref="btn2">Sign Out</div>
             </div>
           </div>
         </header>
@@ -45,8 +45,8 @@
                   <div class="mob-nav__text">Privacy & Cookies Policy</div></a><a class="mob-nav__link" href="contact.html"> 
                   <div class="mob-nav__bg"></div>
                   <div class="mob-nav__text">Contact Us</div></a></div>
-              <div class="button button_1" v-if="!login" @click="showModal = true">Sign Up</div>
-              <div class="button button_2" v-if="login" @click="signOut">Sign Out</div>
+              <div class="button button_1" v-show="!login" @click="showModal = true">Sign Up</div>
+              <div class="button button_2" v-show="login" @click="signOut">Sign Out</div>
             </div>
           </div>
         </transition>
